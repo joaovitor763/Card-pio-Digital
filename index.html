@@ -83,8 +83,8 @@
                 <h3 class="text-lg font-bold text-gray-900"><i class="fa-solid fa-lock text-amber-500 mr-2"></i>Área Administrativa</h3>
                 <button onclick="fecharModal('login-modal')" class="text-gray-400 hover:text-gray-600"><i class="fa-solid fa-xmark text-lg"></i></button>
             </div>
-            <p class="text-xs text-gray-500 mb-4">Digite a senha de administrador para gerenciar o cardápio, preços e mesas.</p>
-            <input type="password" id="admin-password-input" autocomplete="current-password" placeholder="Senha de administrador" class="w-full px-4 py-3 border border-gray-200 rounded-xl mb-4 text-sm focus:ring-2 focus:ring-amber-500 outline-none">
+            <p class="text-xs text-gray-500 mb-4">Digite a senha de administrador para gerenciar o cardápio e preços.</p>
+            <input type="password" id="admin-password-input" autocomplete="new-password" placeholder="Digite a senha (padrão: 1234)" class="w-full px-4 py-3 border border-gray-200 rounded-xl mb-4 text-sm focus:ring-2 focus:ring-amber-500 outline-none">
             <button onclick="fazerLogin()" class="w-full bg-slate-900 hover:bg-slate-800 text-white py-3 rounded-xl font-medium text-sm transition shadow">
                 Entrar no Painel
             </button>
@@ -109,4 +109,15 @@
             <div class="flex space-x-2 border-b border-gray-800 pb-3">
                 <button onclick="mudarTabAdmin('produtos')" id="btn-tab-produtos" class="px-4 py-2 rounded-xl text-sm font-semibold bg-amber-500 text-slate-900 transition">Gerenciar Produtos</button>
                 <button onclick="mudarTabAdmin('mesas')" id="btn-tab-mesas" class="px-4 py-2 rounded-xl text-sm font-semibold bg-slate-800 text-gray-300 transition">Gerador de QR Code (Mesas)</button>
-                <button onclick
+                <button onclick="mudarTabAdmin('chamadas')" id="btn-tab-chamadas" class="px-4 py-2 rounded-xl text-sm font-semibold bg-slate-800 text-gray-300 transition relative">
+                    Chamadas de Garçom <span id="badge-chamadas" class="hidden absolute -top-1 -right-1 bg-red-500 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold">0</span>
+                </button>
+                <button onclick="mudarTabAdmin('config')" id="btn-tab-config" class="px-4 py-2 rounded-xl text-sm font-semibold bg-slate-800 text-gray-300 transition">Configurações & Senha</button>
+            </div>
+
+            <!-- SEÇÃO 1: PRODUTOS -->
+            <div id="admin-section-produtos" class="space-y-6">
+                <div class="bg-slate-800/60 p-5 rounded-2xl border border-slate-700/50">
+                    <h3 class="text-md font-bold mb-3 text-amber-400"><i class="fa-solid fa-circle-plus mr-2"></i>Adicionar Novo Produto</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+                        <input type="text" id="new-name" placeholder="Nome do prato/bebida" class="bg-slate-900 border border-slate-7
